@@ -17,7 +17,6 @@ public class TestTime extends BaseTests {
         initialTime = System.currentTimeMillis();
         System.out.println("initial time: "+ initialTime);
 
-
         driver.get("https://dev2.augmedix.com:8191/");
         notewriterPage = new NotewriterPage(driver);
         notewriterPage.addToList("Initial Time", initialTime, 0L);

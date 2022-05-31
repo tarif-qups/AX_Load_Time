@@ -173,6 +173,9 @@ public class NotewriterPage extends BasePage {
             System.out.println("Time before clicking add patient: " + timeBeforeClickingAddPatient);
             WebElement element = driver.findElement(addPatientIcon);
             element.click();
+
+//            JavascriptExecutor executor = (JavascriptExecutor)driver;
+//            executor.executeScript("arguments[0].click();", element);
         } else {
             System.out.println("element not found.");
         }
@@ -285,6 +288,7 @@ public class NotewriterPage extends BasePage {
 
         System.out.println("time before clicking medication: " + timeBeforeClickingMedication);
 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(medicationText).click();
         driver.findElement(medicationInputField).sendKeys("a");
 
